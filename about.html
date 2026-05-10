@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Peak14 Consulting</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="Peak14_logo.png" alt="Peak14 Consulting" class="logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg-lines"></div>
+    <div class="page-hero-content">
+      <div class="section-label">Principal Consultant</div>
+      <h1 class="page-title">Tony Anderson</h1>
+      <p>HCSS Expert &amp; Construction Training Specialist</p>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="bio-grid">
+      <div class="bio-photo-col">
+        <div class="bio-photo-placeholder">
+          <span class="initials">TA</span>
+          <div class="photo-badge">Principal</div>
+        </div>
+        <a href="https://www.linkedin.com/in/" target="_blank" class="linkedin-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <div class="bio-text-col">
+        <h2>About Tony</h2>
+        <p>Tony Anderson is the Principal of Peak14 Consulting, bringing deep expertise in HCSS software and a firsthand understanding of the construction industry. With years of experience helping contractors get the most out of their estimating and field management tools, Tony delivers training that's practical, efficient, and built around how real construction teams work.</p>
+        <p>Peak14 specializes exclusively in HCSS products — HeavyBid for estimating and HeavyJob for field cost tracking. This focused expertise means clients get training that goes far beyond the manual, tailored to their specific workflows, crew structures, and project types.</p>
+        <p>Whether working with a small contractor just getting started with HeavyBid or helping a large civil company standardize HeavyJob across multiple divisions, Tony's approach is always hands-on, direct, and results-focused.</p>
+        <div class="bio-tags">
+          <span class="tag">HeavyBid</span>
+          <span class="tag">HeavyJob</span>
+          <span class="tag">Construction Industry</span>
+          <span class="tag">On-Site Training</span>
+          <span class="tag">Remote Training</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <div class="section-label">2026 Training Locations</div>
+    <h2 class="section-title">Where We've Been</h2>
+    <p class="map-intro">Training delivered across the United States and Canada. Click any pin for details.</p>
+
+    <div class="map-wrapper">
+      <div id="map-container">
+        <svg id="training-map" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+          <!-- USA + Canada simplified outline paths will be drawn by JS -->
+        </svg>
+        <div id="map-tooltip" class="map-tooltip hidden"></div>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><span class="pin-dot"></span> Training Location</div>
+        <div class="training-count">
+          <span id="location-count">0</span> locations in 2026
+        </div>
+      </div>
+    </div>
+
+    <!-- EDITABLE TRAINING LIST -->
+    <div class="training-list-section">
+      <div class="training-list-header">
+        <h3>2026 Training Schedule</h3>
+        <button class="btn-primary btn-sm" id="add-location-btn">+ Add Location</button>
+      </div>
+
+      <!-- Add Form (hidden by default) -->
+      <div id="add-form" class="add-form hidden">
+        <h4>Add Training Location</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="form-city" placeholder="e.g. Houston" />
+          </div>
+          <div class="form-group">
+            <label>State / Province</label>
+            <input type="text" id="form-state" placeholder="e.g. TX" />
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <select id="form-country">
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="text" id="form-date" placeholder="e.g. March 2026" />
+          </div>
+          <div class="form-group">
+            <label>Training Type</label>
+            <select id="form-type">
+              <option value="HeavyBid">HeavyBid</option>
+              <option value="HeavyJob">HeavyJob</option>
+              <option value="Both">HeavyBid + HeavyJob</option>
+            </select>
+          </div>
+          <div class="form-group form-group-wide">
+            <label>Notes (optional)</label>
+            <input type="text" id="form-notes" placeholder="e.g. 3-day intensive" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary btn-sm" id="save-location-btn">Save Location</button>
+          <button class="btn-ghost btn-sm" id="cancel-add-btn">Cancel</button>
+        </div>
+      </div>
+
+      <div id="training-cards" class="training-cards"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Peak14_logo.png" alt="Peak14 Consulting" class="logo-img footer-logo"/>
+        <p>HCSS Training for the Construction Industry</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Peak14 Consulting. All rights reserved.</div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
